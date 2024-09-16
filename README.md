@@ -106,6 +106,7 @@ Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
+* changed node and js-controller version
 
 ### 0.0.2-alpha.0 (2024-09-16)
 * (zeonit) initial release

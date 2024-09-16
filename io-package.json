@@ -1,0 +1,93 @@
+{
+	"common": {
+		"name": "magicbell-push-notifications",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
+			}
+		},
+		"titleLang": {
+			"en": "MagicBell Push",
+			"de": "MagicBell Push",
+			"ru": "MagicBell Push",
+			"pt": "MagicBell Push",
+			"nl": "MagicBell-push",
+			"fr": "Poussoir MagicBell",
+			"it": "Spinta MagicBell",
+			"es": "Empuje de campana mágica",
+			"pl": "Naciśnięcie MagicBell",
+			"uk": "MagicBell Push",
+			"zh-cn": "魔铃推"
+		},
+		"desc": {
+			"en": "Adapter to push notifications via MagicBell to different push clients.",
+			"de": "Adapter zum Push-Benachrichtigungen über MagicBell an verschiedene Push-Clients.",
+			"ru": "Адаптер для отправки уведомлений через MagicBell различным push-клиентам.",
+			"pt": "Adaptador para notificações push via MagicBell para diferentes clientes push.",
+			"nl": "Adapter om meldingen via MagicBell naar verschillende push-clients te pushen.",
+			"fr": "Adaptateur pour pousser les notifications via MagicBell vers différents clients push.",
+			"it": "Adattatore per inviare notifiche tramite MagicBell a diversi client push.",
+			"es": "Adaptador para enviar notificaciones a través de MagicBell a diferentes clientes push.",
+			"pl": "Adapter do powiadomień push za pośrednictwem MagicBell do różnych klientów push.",
+			"uk": "Адаптер для push-повідомлень через MagicBell на різні push-клієнти.",
+			"zh-cn": "通过 MagicBell 将通知推送到不同推送客户端的适配器。"
+		},
+		"authors": [
+			"zeonit <dev@radishome.de>"
+		],
+		"keywords": [
+			"push notifications",
+			"magicbell",
+			"messages",
+			"android",
+			"ios",
+			"web"
+		],
+		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
+		"platform": "Javascript/Node.js",
+		"icon": "magicbell-push-notifications.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/radishome/ioBroker.magicbell-push-notifications/main/admin/magicbell-push-notifications.png",
+		"readme": "https://github.com/radishome/ioBroker.magicbell-push-notifications/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"mode": "daemon",
+		"type": "messaging",
+		"compact": true,
+		"connectionType": "cloud",
+		"dataSource": "push",
+		"adminUI": {
+			"config": "json"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=6.0.11"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": "7.0.23"
+			}
+		]
+	},
+	"native": {
+		"apikey": "",
+		"apisecret": ""
+	},
+	"objects": [],
+	"instanceObjects": []
+}

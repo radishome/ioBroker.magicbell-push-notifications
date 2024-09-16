@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "magicbell-push-notifications",
-    "version": "0.0.2-alpha.0",
+    "version": "0.0.2-alpha.1",
     "news": {
+      "0.0.2-alpha.1": {
+        "en": "changed node and js-controller version",
+        "de": "geänderte node und js-controller-version",
+        "ru": "измененная версия узла и js-controller",
+        "pt": "node alterado e versão js-controller",
+        "nl": "veranderd node en js-controller versie",
+        "fr": "version modifiée du nœud et du contrôleur js",
+        "it": "cambiato nodo e js-controller versione",
+        "es": "cambio de nodo y js-controller versión",
+        "pl": "zmieniona wersja węzła i sterownika js-",
+        "uk": "змінена вершина і js-controller версія",
+        "zh-cn": "更改节点和js控制器版本"
+      },
       "0.0.2-alpha.0": {
         "en": "initial release",
         "de": "erstausstrahlung",

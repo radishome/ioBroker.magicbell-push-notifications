@@ -21,7 +21,7 @@
     "url": "https://github.com/radishome/ioBroker.magicbell-push-notifications.git"
   },
   "engines": {
-    "node": ">= 20"
+    "node": ">= 18"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.1.6",

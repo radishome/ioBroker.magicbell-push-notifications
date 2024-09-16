@@ -1,6 +1,6 @@
 {
   "name": "iobroker.magicbell-push-notifications",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha.0",
   "description": "Adapter to push notifications via MagicBell to different push clients.",
   "author": {
     "name": "zeonit",

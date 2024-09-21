@@ -37,7 +37,7 @@ class MagicbellPushNotifications extends utils.Adapter {
 	}
 
 	processMessage(obj) {
-		this.log.debug('Processing message: ' + JSON.stringify(obj.message));
+		this.log.info('Processing message: ' + JSON.stringify(obj.message));
 
 
 	}

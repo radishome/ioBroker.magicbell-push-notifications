@@ -90,6 +90,7 @@
     "extIcon": "https://raw.githubusercontent.com/radishome/ioBroker.magicbell-push-notifications/main/admin/magicbell-push-notifications.png",
     "readme": "https://github.com/radishome/ioBroker.magicbell-push-notifications/blob/main/README.md",
     "loglevel": "info",
+	"messagebox": true,
     "tier": 3,
     "mode": "daemon",
     "type": "messaging",

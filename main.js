@@ -5,6 +5,7 @@
  */
 
 const utils = require('@iobroker/adapter-core');
+const { ProjektClient } = require('magicbell/project-client');
 
 class MagicbellPushNotifications extends utils.Adapter {
 
@@ -17,6 +18,7 @@ class MagicbellPushNotifications extends utils.Adapter {
 			name: 'magicbell-push-notifications',
 		});
 
+		this.magicbell = null;
 		this.on('ready', this.onReady.bind(this));
 		this.on('message', this.onMessage.bind(this));
 	}
@@ -26,6 +28,10 @@ class MagicbellPushNotifications extends utils.Adapter {
 			this.log.error('API Key and API Secret are required');
 		}
 
+		this.magicbell = new ProjektClient({
+			apiKey: this.config.apikey,
+			apiSecret: this.config.apisecret
+		});
 	}
 
 	onMessage(obj) {
@@ -36,10 +42,30 @@ class MagicbellPushNotifications extends utils.Adapter {
 		}
 	}
 
-	processMessage(obj) {
-		this.log.info('Processing message: ' + JSON.stringify(obj.message));
+	async processMessage(obj) {
+		// first get all users
+		const users = await this.magicbell.users.list({ per_page: 1000 }).toArray();
 
+		try {
+			// then send the message to all users
+			const notification = await this.magicbell.notifications.create({
+				title: obj.message.title,
+				content: obj.message.message || obj.message.body,
+				category: obj.message.category || null,
+				action_url: obj.message.url || null,
+				recipients: users.map(user => {
+					return {
+						external_id: user.external_id
+					};
+				})
+			});
 
+			this.log.info('Notification sent:' + JSON.stringify(notification));
+			obj.callback && this.sendTo(obj.from, 'send', { success: true }, obj.callback);
+		} catch (error) {
+			this.log.error('Error sending notification:' + error);
+			obj.callback && this.sendTo(obj.from, 'send', { error: error }, obj.callback);
+		}
 	}
 }
 

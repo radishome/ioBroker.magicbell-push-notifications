@@ -2,6 +2,14 @@
 	"i18n": true,
 	"type": "panel",
 	"items": {
+		"actionurl": {
+			"type": "text",
+			"label": "URL for Smarthome (Action URL)",
+			"xs": 12,
+			"sm": 12,
+			"md": 4,
+			"newLine": true
+		},
 		"apikey": {
 			"type": "text",
 			"label": "API Key",

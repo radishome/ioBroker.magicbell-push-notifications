@@ -112,6 +112,7 @@
     ]
   },
   "native": {
+    "actionurl": "",
     "apikey": "",
     "apisecret": ""
   },

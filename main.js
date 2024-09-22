@@ -5,7 +5,7 @@
  */
 
 const utils = require('@iobroker/adapter-core');
-const { ProjektClient } = require('magicbell/project-client');
+const { ProjectClient } = require('magicbell/project-client');
 
 class MagicbellPushNotifications extends utils.Adapter {
 
@@ -18,7 +18,6 @@ class MagicbellPushNotifications extends utils.Adapter {
 			name: 'magicbell-push-notifications',
 		});
 
-		this.magicbell = null;
 		this.on('ready', this.onReady.bind(this));
 		this.on('message', this.onMessage.bind(this));
 	}
@@ -27,11 +26,6 @@ class MagicbellPushNotifications extends utils.Adapter {
 		if (!this.config.apikey || !this.config.apisecret) {
 			this.log.error('API Key and API Secret are required');
 		}
-
-		this.magicbell = new ProjektClient({
-			apiKey: this.config.apikey,
-			apiSecret: this.config.apisecret
-		});
 	}
 
 	onMessage(obj) {
@@ -43,12 +37,19 @@ class MagicbellPushNotifications extends utils.Adapter {
 	}
 
 	async processMessage(obj) {
-		// first get all users
-		const users = await this.magicbell.users.list({ per_page: 1000 }).toArray();
 
 		try {
+
+			const magicbell = new ProjectClient({
+				apiKey: this.config.apikey,
+				apiSecret: this.config.apisecret
+			});
+
+			// first get all users
+			const users = await magicbell.users.list({ per_page: 1000 }).toArray({ limit: 1000 });
+
 			// then send the message to all users
-			const notification = await this.magicbell.notifications.create({
+			const notification = await magicbell.broadcasts.create({
 				title: obj.message.title,
 				content: obj.message.message || obj.message.body,
 				category: obj.message.category || null,

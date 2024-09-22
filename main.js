@@ -54,7 +54,7 @@ class MagicbellPushNotifications extends utils.Adapter {
 				content: obj.message.message || obj.message.body,
 				category: obj.message.category || null,
 				action_url: obj.message.url || null,
-				recipients: users.map(user => {
+				recipients: users.filter(u => u.external_id !== null).map(user => {
 					return {
 						external_id: user.external_id
 					};

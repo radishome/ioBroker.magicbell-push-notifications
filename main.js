@@ -46,7 +46,7 @@ class MagicbellPushNotifications extends utils.Adapter {
 			});
 
 			// first get all users
-			const users = await magicbell.users.list({ per_page: 1000 }).toArray({ limit: 1000 });
+			const users = await magicbell.users.list({ per_page: 99 }).toArray({ limit: 99 });
 
 			// then send the message to all users
 			const notification = await magicbell.broadcasts.create({
